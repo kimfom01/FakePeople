@@ -3,9 +3,19 @@ using FakePeople.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+const string corsPolicy = "any origin";
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: corsPolicy, policy =>
+        policy.WithOrigins()
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+        );
+});
 builder.Services.AddScoped<FakePeopleGenerator>();
 builder.Services.AddDbContext<PersonDbContext>(options =>
     options.UseInMemoryDatabase("FakePersonDb"));
@@ -13,6 +23,7 @@ builder.Services.AddDbContext<PersonDbContext>(options =>
 var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseCors(corsPolicy);
 
 app.MapGet("/person/{id:int}", async (PersonDbContext personDb, [FromRoute] int id) =>
 {
@@ -40,7 +51,6 @@ app.MapGet("/people", async (PersonDbContext personDb) =>
 
 await using var context = app.Services.CreateScope()
     .ServiceProvider.GetRequiredService<PersonDbContext>();
-await context.Database.EnsureDeletedAsync();
 await context.Database.EnsureCreatedAsync();
 
 app.Run();
