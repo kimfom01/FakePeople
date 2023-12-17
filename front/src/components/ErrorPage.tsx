@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
 import { Base } from "./Base";
-import "./NotFound.css";
+import "./ErrorPage.css";
 
-export default function NotFound() {
+interface Prop {
+  message: string;
+}
+
+export const ErorrPage = ({ message }: Prop) => {
   return (
     <Base
-      Child={
+      child={
         <div className="n-f-style">
-          <h1 style={{ fontSize: "5rem" }}>404 Page Not Found</h1>
+          <h1 style={{ fontSize: "5rem" }}>{message}</h1>
           <h1>Oops! You seem to be lost.</h1>
           <p>
             Go to:{" "}
@@ -19,4 +23,4 @@ export default function NotFound() {
       }
     />
   );
-}
+};
