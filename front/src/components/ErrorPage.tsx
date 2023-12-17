@@ -13,7 +13,7 @@ export const ErrorPage = ({ error }: Prop) => {
             style={{ height: "calc(100vh - 56px)" }}
             className="d-flex justify-content-center align-items-center"
           >
-            <div className="mt-3 h1">{error.message}</div>
+            <div className="h1">{error.message}</div>
           </div>
         }
       />
