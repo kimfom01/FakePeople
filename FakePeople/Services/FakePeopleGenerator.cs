@@ -16,7 +16,7 @@ public class FakePeopleGenerator
             .RuleFor(fake => fake.LastName, fake => fake.Name.LastName())
             .RuleFor(fake => fake.Age, fake => fake.Random.Int(0, 99))
             .RuleFor(fake => fake.ImageUrl, fake => fake.Image.PicsumUrl())
-            .RuleFor(fake => fake.Bio, fake => fake.Lorem.Sentences(4));
+            .RuleFor(fake => fake.Bio, fake => fake.Lorem.Sentences(10));
     }
 
     public IEnumerable<Person> GeneratePeople(int? count)
