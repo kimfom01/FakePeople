@@ -1,3 +1,5 @@
+import { Base } from "./Base";
+
 export const Details = () => {
-  return <>Hello World</>;
+  return <Base Child={<div>Hello World</div>} />;
 };
