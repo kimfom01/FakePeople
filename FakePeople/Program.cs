@@ -25,7 +25,7 @@ app.UseSwagger();
 app.UseSwaggerUI();
 app.UseCors(corsPolicy);
 
-app.MapGet("/person/{id:int}", async (PersonDbContext personDb, [FromRoute] int id) =>
+app.MapGet("/api/person/{id:int}", async (PersonDbContext personDb, [FromRoute] int id) =>
 {
     var person = await personDb.Persons.FirstOrDefaultAsync(per => per.Id == id);
 
@@ -37,7 +37,7 @@ app.MapGet("/person/{id:int}", async (PersonDbContext personDb, [FromRoute] int 
     return Results.Ok(person);
 });
 
-app.MapGet("/people", async (PersonDbContext personDb) =>
+app.MapGet("/api/people", async (PersonDbContext personDb) =>
 {
     var people = await personDb.Persons.AsNoTracking().ToListAsync();
 
