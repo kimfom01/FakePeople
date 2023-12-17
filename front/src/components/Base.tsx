@@ -2,12 +2,10 @@ import { ReactElement } from "react";
 import { Link } from "react-router-dom";
 
 interface Prop {
-  Child: ReactElement;
+  child: ReactElement;
 }
 
-export const Base = ({ Child }: Prop) => {
-  // const [errorState, setErrorState] = useState<string>("");
-
+export const Base = ({ child: Child }: Prop) => {
   return (
     <>
       <nav className="navbar bg-dark fixed-top">

@@ -6,20 +6,20 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Details } from "./components/Details";
-import NotFound from "./components/NotFound";
+import { ErorrPage } from "./components/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <NotFound />,
+    errorElement: <ErorrPage message="Error! Unable to fetch people" />,
   },
   {
     path: "/details",
     element: <Details />,
-    errorElement: <NotFound />,
+    errorElement: <ErorrPage message="Error! Could not load details" />,
   },
-  { path: "*", element: <NotFound /> },
+  { path: "*", element: <ErorrPage message="404 Page Not Found" /> },
 ]);
 
 const root = ReactDOM.createRoot(
