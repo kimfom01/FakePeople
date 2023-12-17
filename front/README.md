@@ -2,6 +2,17 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## IMPORTANT NOTE
+
+You need to create a .env file at the `front`'s root directory with the following variables
+
+```env
+REACT_APP_API_URL=https://localhost:7149/api
+REACT_APP_NAME=Fake People
+```
+
+or replace them with another valid data
+
 ## Available Scripts
 
 In the project directory, you can run:
