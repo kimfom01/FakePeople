@@ -32,7 +32,10 @@ export const GetPeople = () => {
           key={key}
           className="card-frame card col-sm-12 col-md-3 col-lg-2 m-3"
         >
-          <Link to="/details" className="link-dark text-decoration-none">
+          <Link
+            to={`/details/${person.id}`}
+            className="link-dark text-decoration-none"
+          >
             <div className="text-decoration-none">
               <div className="card-body">
                 <img
