@@ -1,21 +1,21 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Details } from "./components/Details";
 import { ErorrPage } from "./components/ErrorPage";
+import { PeopleList } from "./components/PeopleList";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <PeopleList />,
     errorElement: <ErorrPage message="Error! Unable to fetch people" />,
   },
   {
-    path: "/details",
+    path: "/details/:id",
     element: <Details />,
     errorElement: <ErorrPage message="Error! Could not load details" />,
   },
