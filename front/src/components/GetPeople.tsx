@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Person } from "../Models/Person";
+import { Link } from "react-router-dom";
 
 export const GetPeople = () => {
   const uri: string = process.env.REACT_APP_API_URL as string;
@@ -22,7 +23,7 @@ export const GetPeople = () => {
               key={key}
               className="card-frame card col-sm-12 col-md-3 col-lg-2 m-3"
             >
-              <a href="/details" className="link-dark text-decoration-none">
+              <Link to="/details" className="link-dark text-decoration-none">
                 <div className="text-decoration-none">
                   <div className="card-body">
                     <img
@@ -40,7 +41,7 @@ export const GetPeople = () => {
                     Bio: <div className="text-truncate">{person.bio}</div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           ))}
         </div>
