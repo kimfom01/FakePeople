@@ -1,26 +1,22 @@
-import { Link } from "react-router-dom";
 import { Base } from "./Base";
-import "./ErrorPage.css";
 
 interface Prop {
-  message: string;
+  error: Error;
 }
 
-export const ErorrPage = ({ message }: Prop) => {
+export const ErrorPage = ({ error }: Prop) => {
   return (
-    <Base
-      child={
-        <div className="n-f-style">
-          <h1 style={{ fontSize: "5rem" }}>{message}</h1>
-          <h1>Oops! You seem to be lost.</h1>
-          <p>
-            Go to:{" "}
-            <Link className="text-decoration-none" to="/">
-              Home Page
-            </Link>
-          </p>
-        </div>
-      }
-    />
+    <div>
+      <Base
+        child={
+          <div
+            style={{ height: "calc(100vh - 56px)" }}
+            className="d-flex justify-content-center align-items-center"
+          >
+            <div className="mt-3 h1">{error.message}</div>
+          </div>
+        }
+      />
+    </div>
   );
 };
