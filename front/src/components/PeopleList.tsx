@@ -43,7 +43,7 @@ export const PeopleList = () => {
                   <div className="card-body">
                     <img
                       src={person.imageUrl}
-                      alt="Some random photograph"
+                      alt={`Profile photograph of ${person?.firstName}`}
                       style={{ width: "100%" }}
                     />
                     <hr />
