@@ -1,8 +1,8 @@
 export interface Person {
-    Id: number,
-    FirstName: string,
-    LastName: string,
-    Age: number,
-    ImageUrl: string,
-    Bio: string
+  id: number;
+  firstName: string;
+  lastName: string;
+  age: number;
+  imageUrl: string;
+  bio: string;
 }
