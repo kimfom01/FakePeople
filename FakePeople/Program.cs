@@ -10,11 +10,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: corsPolicy, policy =>
-        policy.WithOrigins()
-            .AllowAnyOrigin()
-            .AllowAnyHeader()
-            .AllowAnyMethod()
-        );
+        policy.WithOrigins("http://localhost:3000"));
 });
 builder.Services.AddScoped<FakePeopleGenerator>();
 builder.Services.AddDbContext<PersonDbContext>(options =>
@@ -43,7 +39,7 @@ app.MapGet("/api/people", async (PersonDbContext personDb) =>
 
     if (people.Count == 0)
     {
-        return Results.NotFound("Not a single person not found");
+        return Results.NotFound("Not a single person not found lol");
     }
 
     return Results.Ok(people);
