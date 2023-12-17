@@ -10,7 +10,6 @@ export const Details = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const params = useParams();
   const personId = Number(params.id);
-  // console.log(personId);
 
   useEffect(() => {
     setIsLoading(true);
