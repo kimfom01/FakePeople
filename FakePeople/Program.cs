@@ -10,7 +10,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: corsPolicy, policy =>
-        policy.WithOrigins("http://localhost:3000"));
+        policy.AllowAnyOrigin());
 });
 builder.Services.AddScoped<FakePeopleGenerator>();
 builder.Services.AddDbContext<PersonDbContext>(options =>

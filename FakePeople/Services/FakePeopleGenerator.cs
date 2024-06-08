@@ -11,7 +11,7 @@ public class FakePeopleGenerator
     public FakePeopleGenerator()
     {
         _faker = new AutoFaker<Person>()
-            .RuleFor(fake => fake.Id, fake => fake.Random.Int(100, 999))
+            .RuleFor(fake => fake.Id, fake => fake.IndexGlobal + 1)
             .RuleFor(fake => fake.FirstName, fake => fake.Name.FirstName())
             .RuleFor(fake => fake.LastName, fake => fake.Name.LastName())
             .RuleFor(fake => fake.Age, fake => fake.Random.Int(0, 99))
