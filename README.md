@@ -15,7 +15,7 @@
 
 ### Getting the Project
 
-- Clone the repository: `git clone https://github.com/kimfom01/DoDoneDid.git`
+- Clone the repository: `git clone https://github.com/kimfom01/FakePeople.git`
 - Alternatively, download and extract the project ZIP file.
 
 ### Building the Project
